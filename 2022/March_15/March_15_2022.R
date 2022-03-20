@@ -15,16 +15,11 @@
 
 #Load the packages, not using most of them, just easy to have it all loaded.
 library(tidytuesdayR)
-library(ggplot2)
 library(tidyverse)
-library(lubridate)
 library(skimr)
-library(patchwork)
-library(ggThemeAssist)
-library(ggtext)
-library(scales)
 library(magick)
-library(cowplot)
+library(scales)
+
 
 # read the data using tidytuesdayR
 
@@ -59,7 +54,7 @@ counts_overall <- cran_r %>%
 # ggplot logo
 ggplot_logo <- image_read("https://ggplot2.tidyverse.org/logo.png")
 image_info(ggplot_logo)
-
+tidy_logo <- image_read("https://tidyverse.tidyverse.org/logo.png")
 
 # Making the actual plot
 
@@ -122,8 +117,15 @@ plot <- counts_overall %>%
 plot
 grid::grid.raster(
   ggplot_logo,
-  x = 0.07,
-  y = 0.03,
+  x = 0.01,
+  y = 0.01,
   just = c('left', 'bottom'),
-  width = unit(0.35, 'inches')
+  width = unit(0.4, 'inches')
+)
+grid::grid.raster(
+  tidy_logo,
+  x = 0.05,
+  y = 0.01,
+  just = c('left', 'bottom'),
+  width = unit(0.4, 'inches')
 )
