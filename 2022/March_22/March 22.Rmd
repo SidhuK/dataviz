@@ -1,0 +1,95 @@
+---
+title: "Baby_Names_TidyTuesday"
+output: html_document
+date: '2022-03-21'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+library(tidytuesdayR)
+library(tidyverse)
+library(skimr)
+library(magick)
+library(streamgraph)
+library(gganimate)
+library(hrbrthemes)
+library(ggthemes)
+
+```
+
+```{r}
+# Loading the dataset
+
+tuesdata <- tidytuesdayR::tt_load(2022, week = 12)
+babynames <- tuesdata$babynames
+```
+```{r}
+# Take a general overview of the data
+skim(babynames)
+
+# check for most common names
+babynames %>% 
+  count(name) %>% arrange(desc(n))
+
+```
+
+
+```{r}
+# make a new subset of most frequently occurring names through the years.
+# babynames_common <- babynames %>% 
+#   group_by(name) %>% 
+#   mutate(freq = n()) %>% 
+#   ungroup() %>% 
+#   filter(freq > 275) %>%
+#   select(-freq)
+# 
+# 
+# sharedName <- babynames %>%
+#   mutate(male = ifelse(sex == "M", n, 0), female = ifelse(sex == "F", n, 0)) %>%
+#   group_by(name) %>%
+#   summarize(Male = as.numeric(sum(male)), 
+#             Female = as.numeric(sum(female)),
+#             count = as.numeric(sum(n)),
+#             AvgYear = round(as.numeric(sum(year * n) / sum(n)),0)) %>%
+#   filter(Male > 30000 & Female > 30000) %>%
+#   collect
+
+
+babynames_popular <- babynames %>%
+  group_by(sex, name) %>%
+  summarize(total = sum(n)) %>%
+  arrange(desc(total))
+
+```
+
+
+```{r}
+
+babynames_top7 <-  babynames %>% 
+  filter(name %in% 
+           c("James","John", "Robert", 
+             "Mary", "William", "David","Joseph","Ricard", "Elizabeth"))
+
+```
+
+```{r}
+p <- babynames_top7 %>%
+  arrange(name, year) %>%
+  mutate(x_reveal = row_number()) %>%
+  ggplot(aes(x = year, y = n, colour = name)) +
+  geom_line() +
+  ggtitle("Popularity of American names in the previous 150 years") +
+  theme_fivethirtyeight() +
+  ylab("Number of babies born") +
+  transition_reveal(along = x_reveal)
+
+animate(p,nframes=300, fps = 4)
+
+  
+```
+
