@@ -1,6 +1,12 @@
 # TidyTuesday
  My contributions to the weekly tidytuesday datasets.
  
+ ## April 12 2022 - Fossil Fuels - Indoor Death Rates
+
+ 
+ <img src ="2022/April_12/change.png">
+
+ 
   ## April 05 2022 - Digital News Organizations
 
  
