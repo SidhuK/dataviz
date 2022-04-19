@@ -2,6 +2,10 @@
 
 My contributions to the weekly tidytuesday datasets.
 
+## April 19 2022 - Times Crossword Puzzle Answers
+
+![image](2022/06_April_19/times_answers.png)
+
 ## April 12 2022 - Fossil Fuels - Indoor Death Rates
 
  <img src ="2022/05_April_12/change.png">
