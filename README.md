@@ -2,6 +2,10 @@
 
 My contributions to the weekly tidytuesday datasets.
 
+## April 26 2022 - Kaggle.com Hidden Gems
+
+![image](2022/07_April_26/kaggle.png)
+
 ## April 19 2022 - Times Crossword Puzzle Answers
 
 ![image](2022/06_April_19/times_answers.png)
