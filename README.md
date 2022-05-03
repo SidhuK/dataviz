@@ -2,6 +2,10 @@
 
 My contributions to the weekly tidytuesday datasets.
 
+## May 03 2022 - Power Sources and their Capacity
+
+![image](2022/08_May_03/plot.png)
+
 ## April 26 2022 - Kaggle.com Hidden Gems
 
 ![image](2022/07_April_26/kaggle.png)
