@@ -1,4 +1,4 @@
-
+library(ggplot2)
 
 
 
@@ -13,21 +13,22 @@ library(ggtext)
 font_add_google(family = "Bangers", name = "Bangers")
 
 
+
 capacity <-
   readr::read_csv(
-    'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-05-03/capacity.csv'
+    "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-05-03/capacity.csv"
   )
 wind <-
   readr::read_csv(
-    'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-05-03/wind.csv'
+    "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-05-03/wind.csv"
   )
 solar <-
   readr::read_csv(
-    'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-05-03/solar.csv'
+    "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-05-03/solar.csv"
   )
 average_cost <-
   readr::read_csv(
-    'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-05-03/average_cost.csv'
+    "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-05-03/average_cost.csv"
   )
 
 capacity <- capacity %>%
@@ -40,13 +41,15 @@ capacity <- capacity %>%
 # https://github.com/davidsjoberg/ggstream
 
 
-colors_legend <- c("#FFB327",
-                   "#D1F1F9",
-                   "#4F607C",
-                   "#c5b689",
-                   "#8E038E",
-                   "#5A6D87",
-                   "#000000")
+colors_legend <- c(
+  "#FFB327",
+  "#D1F1F9",
+  "#4F607C",
+  "#c5b689",
+  "#8E038E",
+  "#5A6D87",
+  "#000000"
+)
 
 
 
@@ -68,8 +71,10 @@ plot1 <- ggplot(capacity, aes(year, prior, fill = type)) +
     size = 0.09,
     sorting = "onset"
   ) +
-  scale_fill_manual(values = colors_legend,
-                    name = NULL) +
+  scale_fill_manual(
+    values = colors_legend,
+    name = NULL
+  ) +
   scale_x_continuous(breaks = c(2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020)) +
   theme_minimal(base_family = "Bangers") +
   theme(
@@ -80,9 +85,11 @@ plot1 <- ggplot(capacity, aes(year, prior, fill = type)) +
     legend.position = "bottom",
     legend.text = element_text(color = "grey40", size = 14),
     legend.box.margin = margin(t = 30),
-    legend.background = element_rect(color = "grey40",
-                                     size = .3,
-                                     fill = "grey95"),
+    legend.background = element_rect(
+      color = "grey40",
+      size = .3,
+      fill = "grey95"
+    ),
     legend.key.height = unit(.25, "lines"),
     legend.key.width = unit(2.5, "lines"),
     plot.margin = margin(rep(20, 4))
@@ -110,8 +117,10 @@ plot2 <- ggplot(capacity, aes(year, new, fill = type)) +
     size = 0.02,
     sorting = "onset"
   ) +
-  scale_fill_manual(values = colors_legend,
-                    name = NULL) +
+  scale_fill_manual(
+    values = colors_legend,
+    name = NULL
+  ) +
   scale_x_continuous(breaks = c(2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020)) +
   theme_minimal(base_family = "Bangers") +
   theme(
@@ -127,10 +136,10 @@ plot2 <- ggplot(capacity, aes(year, new, fill = type)) +
 
 plot_final <- plot1 / plot2 +
   plot_annotation(
-    title = 'Power Generation Capacity',
-    subtitle = 'The shreamcharts describe the power generation from various sources (solar, nuclear, wind, etc) along with <br>
-    their capacity over the years. The graphs are separated into New and Prior Generation <br> In Gigawatts. <br> ',
-    caption = 'Data: Berkeley Lab | Graphic: Github.com/SidhuK ',
+    title = "Power Generation Capacity",
+    subtitle = "The shreamcharts describe the power generation from various sources (solar, nuclear, wind, etc) along with <br>
+    their capacity over the years. The graphs are separated into New and Prior Generation <br> In Gigawatts. <br> ",
+    caption = "Data: Berkeley Lab | Graphic: Github.com/SidhuK ",
     theme = theme(
       plot.title = element_text(size = 35, hjust = 0.5),
       plot.subtitle = element_markdown(size = 15, hjust = 0.5),
@@ -138,7 +147,7 @@ plot_final <- plot1 / plot2 +
       plot.background = element_rect(fill = "grey84", color = NA)
     )
   ) &
-  theme(text = element_text('Bangers'))
+  theme(text = element_text("Bangers"))
 
 plot_final
 

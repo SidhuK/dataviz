@@ -10,6 +10,8 @@ html_preview: false
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
+
 ### Loading Libraries
 
 ```{r}
@@ -46,7 +48,7 @@ sports_cleaned <- sports %>%
 #### List of SEC Colleges and Filtering them
 
 ```{r}
-
+sec_
 
 sec_colleges <-
   c(
