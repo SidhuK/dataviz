@@ -2,6 +2,10 @@
 
 My contributions to the weekly tidytuesday datasets.
 
+## May 10 2022 - NYTimes Bestsellers
+
+![image](2022/09_May_10/nytimes.png)
+
 ## May 03 2022 - Power Sources and their Capacity
 
 ![image](2022/08_May_03/plot.png)
