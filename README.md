@@ -2,6 +2,10 @@
 
 My contributions to the weekly tidytuesday datasets.
 
+## May 17 2022 - Eurovision Winners
+
+![image](2022/10_May_11/Eurovision.png)
+
 ## May 10 2022 - NYTimes Bestsellers
 
 ![image](2022/09_May_10/nytimes.png)
