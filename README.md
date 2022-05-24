@@ -2,6 +2,10 @@
 
 My contributions to the weekly tidytuesday datasets.
 
+## May 24 2022 - Women's Rugby 7s
+
+![image](2022/11_May_24/rugby7_ball.png)
+
 ## Random - EPL Winners
 
 ![image](Random/EPL_Table_2022/premierLeague.png)
