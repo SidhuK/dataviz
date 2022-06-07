@@ -2,6 +2,10 @@
 
 My contributions to the weekly tidytuesday datasets.
 
+## June 07 2022 - Anti-LGBT companies
+
+![image](2022/13_June_07/pride.png)
+
 ## May 31 2022 - Axios Brand Reputation
 
 ![image](2022/12_May_31/companies2.png)
