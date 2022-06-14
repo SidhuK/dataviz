@@ -33,7 +33,7 @@ drought_cleaned <- drought_2 |>
 
 
 
-mainland_us <- us_state_grid2 %>% filter(!code %in% c("HI", "AK"))
+mainland_us <- us_state_grid2 |> filter(!code %in% c("HI", "AK"))
 
 
 dry <- ggplot(data = drought_cleaned) +
