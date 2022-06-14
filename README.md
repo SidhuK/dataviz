@@ -2,6 +2,10 @@
 
 My contributions to the weekly tidytuesday datasets.
 
+## June 14 2022 - US Drought Conditions
+
+![image](2022/14_June_14/drought.png)
+
 ## June 07 2022 - Anti-LGBT companies
 
 ![image](2022/13_June_07/pride.png)
