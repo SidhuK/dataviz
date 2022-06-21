@@ -2,6 +2,10 @@
 
 My contributions to the weekly tidytuesday datasets.
 
+## June 21 2022 - Black History / DuBois Style
+
+![image](2022/15_June_21/juneteenth.png)
+
 ## June 14 2022 - US Drought Conditions
 
 ![image](2022/14_June_14/drought.png)
