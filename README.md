@@ -2,6 +2,10 @@
 
 My contributions to the weekly tidytuesday datasets.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b9622264c2701659630008cbb59a1dfe920deafc
 ## June 21 2022 - Black History / DuBois Style
 
 ![image](2022/15_June_21/juneteenth.png)
