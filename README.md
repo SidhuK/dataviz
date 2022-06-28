@@ -2,10 +2,10 @@
 
 My contributions to the weekly tidytuesday datasets.
 
-<<<<<<< HEAD
-=======
+## June 28 2022 - Gender Pay Gap - UK
 
->>>>>>> b9622264c2701659630008cbb59a1dfe920deafc
+![image](2022/16_June_28/epl_pay.png)
+
 ## June 21 2022 - Black History / DuBois Style
 
 ![image](2022/15_June_21/juneteenth.png)
