@@ -12,6 +12,10 @@ https://github.com/rfordatascience/tidytuesday
 
 My contributions to the weekly tidytuesday datasets.
 
+## July 12 2022 - 🛩 European Airports 🛩
+
+![image](2022/18_July_12/airports.png)
+
 ## June 28 2022 -🇬🇧 Gender Pay Gap - UK 🇬🇧
 
 ![image](2022/16_June_28/epl_pay.png)
