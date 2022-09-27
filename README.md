@@ -12,6 +12,10 @@ https://github.com/rfordatascience/tidytuesday
 
 My contributions to the weekly tidytuesday datasets.
 
+## September 27 2022 - 📽 Artists in America 📽
+
+![image](2022/28_September_27/artists.png)
+
 ## July 12 2022 - 🛩 European Airports 🛩
 
 ![image](2022/18_July_12/airports.png)
