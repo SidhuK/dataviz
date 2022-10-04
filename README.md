@@ -12,6 +12,10 @@ https://github.com/rfordatascience/tidytuesday
 
 My contributions to the weekly tidytuesday datasets.
 
+## October 4 2022 - 🆙Product Hunt Products🆙
+
+![image](2022/29_October_04/product_hunt2.png)
+
 ## September 27 2022 - 📽 Artists in America 📽
 
 ![image](2022/28_September_27/artists.png)
