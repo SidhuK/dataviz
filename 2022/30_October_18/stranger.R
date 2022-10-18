@@ -32,12 +32,28 @@ dialogue_join <- dialogue_clean |>
     inner_join(bing_df, by = "word")
 
 
+most_common <- dialogue_join |>
+    group_by(word, sentiment) |>
+    tally() |>
+    arrange(desc(n)) |>
+    head(75)
+
+most_common |>
+    group_by(sentiment) |>
+    summarise(n())
+
 dialogue_j <- dialogue_join |> mutate(sent = ifelse(sentiment == "positive", 1, -1))
 
-dialogue_j |>
-    ggplot(aes(x = line, y = sent), color = sent) +
-    geom_line() +
-    facet_grid(
-        rows = vars(season),
-        cols = vars(episode), scales = "free"
-    )
+# dialogue_j |>
+#     ggplot(aes(x = line, y = sent), color = sent) +
+#     geom_line() +
+#     facet_grid(
+#         rows = vars(season),
+#         cols = vars(episode), scales = "free"
+#     )
+
+
+most_common |> ggplot(aes(y = fct_reorder(word, n), x = n, fill = sentiment)) +
+    geom_col() +
+    theme_minimal() +
+    scale_fill_manual(values = c("red", "green"))
