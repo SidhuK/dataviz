@@ -12,6 +12,10 @@ https://github.com/rfordatascience/tidytuesday
 
 My contributions to the weekly tidytuesday datasets.
 
+## October 18 2022 - 🎃Stranger Things🎃
+
+![image](2022/30_October_18/stranger_things.png)
+
 ## October 4 2022 - 🆙Product Hunt Products🆙
 
 ![image](2022/29_October_04/product_hunt2.png)
