@@ -3,3 +3,16 @@ worldcups <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/
 
 
 library(tidyverse)
+
+
+wcmatches <- wcmatches |> mutate(total_goals = home_score + away_score)
+
+
+high_scores <- wcmatches |>
+    arrange(desc(total_goals)) |>
+    head(19)
+
+
+high_scores |>
+    select(-c(dayofweek, month, date, losing_team, winning_team, outcome)) |>
+    gt::gt()
