@@ -16,5 +16,4 @@ high_scores <- wcmatches |>
 high_scores <- high_scores |>
     select(-c(dayofweek, month, date, losing_team, winning_team, outcome))
 
-high_scores |>
-    ggplot()
+high_scores |> gt::gt()
