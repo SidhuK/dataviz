@@ -12,6 +12,7 @@ font_add_google("Bebas Neue", "Bebas Neue")
 library(waffle)
 
 
+
 number_books <- tlBooks |>
     group_by(series, format) |>
     summarise(total_books = n()) |>
@@ -23,7 +24,7 @@ number_books <- tlBooks |>
 ggannotate::ggannotate()
 
 
-number_books |>
+plot <- number_books |>
     ggplot(aes(fill = fct_rev(format), values = total_books)) +
     geom_waffle(
         n_rows = 10,
@@ -72,6 +73,7 @@ number_books |>
         legend.position = "none"
     )
 
+plot
 
 ggsave("starTrek.png",
     plot = last_plot(), width = 14, height = 7,
