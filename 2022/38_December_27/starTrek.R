@@ -24,7 +24,7 @@ number_books <- tlBooks |>
 ggannotate::ggannotate()
 
 
-plot <- number_books |>
+number_books |>
     ggplot(aes(fill = fct_rev(format), values = total_books)) +
     geom_waffle(
         n_rows = 10,
@@ -73,7 +73,7 @@ plot <- number_books |>
         legend.position = "none"
     )
 
-plot
+
 
 ggsave("starTrek.png",
     plot = last_plot(), width = 14, height = 7,
