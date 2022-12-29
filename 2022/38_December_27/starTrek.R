@@ -1,64 +1,79 @@
 tlBooks <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-12-27/tlBooks.csv")
 
+setwd("/Users/karatatiwantsinghsidhu/Documents/Code/TidyTuesday/2022/38_December_27/")
+
 
 library(tidyverse)
 library(showtext)
 library(ggtext)
 showtext_auto(enable = TRUE)
 showtext_opts(dpi = 250)
-font_add_google("Girassol", "Girassol")
+font_add_google("Bebas Neue", "Bebas Neue")
 library(waffle)
-
-
-
-
-# label_position <- top4 |>
-#     group_by(series) |>
-#     summarise(lab_position = mean(year) + 5) |>
-#     mutate(
-#         series_full =
-#             case_when(
-#                 series == "VOY" ~ "Voyager",
-#                 series == "TOS" ~ "The Original Series",
-#                 series == "TNG" ~ "The Next Generation",
-#                 series == "ENT" ~ "Enterprise"
-#             )
-#     )
-
-
-# top4 |> ggplot(aes(x = year, y = series)) +
-#     geom_text(
-#         aes(y = series, x = lab_position, label = series_full),
-#         data = label_position,
-#         family = "Girassol",
-#         color = "#918741",
-#         vjust = 0.05, hjust = 0.01,
-#         size = 10
-#     ) +
-#     ggdist::stat_dots(binwidth = 0.5) +
-#     ggdist::stat_pointinterval(position = "dodge") +
-#     theme_minimal() +
-#     theme(
-#         axis.text.y = element_blank(),
-#         panel.grid.major.y = element_blank(),
-#         panel.grid.minor.y = element_blank()
-#     )
-
 
 
 number_books <- tlBooks |>
     group_by(series, format) |>
-    summarise(total_books = n())
+    summarise(total_books = n()) |>
+    ungroup() |>
+    filter(series != "NA") |>
+    na.omit()
 
+
+ggannotate::ggannotate()
 
 
 number_books |>
-    ggplot(aes(fill = fct_reorder(format, total_books), values = total_books)) +
+    ggplot(aes(fill = fct_rev(format), values = total_books)) +
     geom_waffle(
         n_rows = 10,
-        size = 0.33,
-        colour = "white",
-        flip = TRUE
+        size = 0.5,
+        colour = "#000000",
+        flip = TRUE,
     ) +
-    facet_wrap(~series, nrow = 2, strip.position = "bottom") +
-    theme_minimal()
+    facet_grid(~ factor(series,
+        levels = c("TNG", "TOS", "VOY", "DS9", "ENT", "ST", "SCE", "NF", "SE", "TLE", "TAS", "TNN", "SGZ", "CHA")
+    )) +
+    theme_void() +
+    scale_fill_manual(
+        values = c("#a71313", "#2b53a7", "#d6a444")
+    ) +
+    labs(
+        title = "The Star Trek universe",
+        subtitle = "The data this week comes from the {rtrek} package.
+        The Start Trek Universe is further classified into different series.
+        For each of these series, different media formats are shown in the chart.<br> This chart shows the number of <span style = 'color:#d6a444;'>Books</span>,
+        <span style = 'color:#2b53a7;'>Episodes</span> and
+        <span style = 'color:#a71313;'>Stories</span> per series. Each square represents a single instance of the corresponding media. <br>",
+        caption = "Data: {rtrek}| Graphic: Github.com/SidhuK"
+    ) +
+    theme(
+        plot.background = element_rect(fill = "#100326"),
+        axis.title.x = element_text(color = "#FFFFFF"),
+        strip.text = element_text(
+            color = "#c1c730",
+            family = "Bebas Neue", size = 15
+        ),
+        plot.subtitle = element_markdown(
+            family = "Bebas Neue",
+            color = "#c1c730",
+            size = 12
+        ),
+        plot.title = element_markdown(
+            family = "Bebas Neue",
+            color = "#c1c730",
+            size = 40
+        ),
+        plot.caption = element_markdown(
+            family = "Bebas Neue",
+            color = "#c1c730",
+            size = 8
+        ),
+        legend.position = "none"
+    )
+
+
+ggsave("starTrek.png",
+    plot = last_plot(), width = 14, height = 7,
+    dpi = 250, units = "in"
+)

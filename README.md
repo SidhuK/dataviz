@@ -12,6 +12,10 @@ https://github.com/rfordatascience/tidytuesday
 
 My contributions to the weekly tidytuesday datasets.
 
+## December 27 2022 - 🚀 Star Trek 🚀
+
+![image](2022/38_December_27/starTrek.png)
+
 ## October 18 2022 - 🎃Stranger Things🎃
 
 ![image](2022/30_October_18/stranger_things.png)
