@@ -12,7 +12,7 @@ https://github.com/rfordatascience/tidytuesday
 
 My contributions to the weekly tidytuesday datasets.
 
-## January 03 2023 - ✍️ Own Data ✍️
+## January 03 2023 - ✍️ Bring Your Own Data ✍️
 
 ![image](2023/01_Jan_03/age.png)
 
