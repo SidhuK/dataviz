@@ -74,7 +74,6 @@ number_books |>
     )
 
 
-
 ggsave("starTrek.png",
     plot = last_plot(), width = 14, height = 7,
     dpi = 250, units = "in"
