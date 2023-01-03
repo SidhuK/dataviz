@@ -12,6 +12,10 @@ https://github.com/rfordatascience/tidytuesday
 
 My contributions to the weekly tidytuesday datasets.
 
+## January 03 2023 - ✍️ Own Data ✍️
+
+![image](2023/01_Jan_03/age.png)
+
 ## December 27 2022 - 🚀 Star Trek 🚀
 
 ![image](2022/38_December_27/starTrek.png)
