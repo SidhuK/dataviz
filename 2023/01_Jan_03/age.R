@@ -20,7 +20,7 @@ age_new |>
   ggforce::geom_link(
     aes(
       x = median_age,
-      y = reorder(name,-index),
+      y = reorder(name, -index),
       xend = median_age_2,
       yend = name,
       size = after_stat(index),
@@ -56,7 +56,7 @@ age_new |>
     family = "Overpass"
   ) +
   labs(
-    title = "Age of First Marriage for Different US States",
+    title = "Women's Age at First Marriage in US",
     subtitle = "The chart contains information on the median age at first marriage for women in the United States. The information was collected from 2006 to 2010 \n and then again from 2015 to 2019. Every state saw an increase in the age at which women first got married. The National median age also increased \n from 26.3 years in 2006-10 to 28 years in 2015-19",
     caption = "Data: Andy Kriebel/Kaggle | Graphic: Github.com/SidhuK",
     x = "Median Age (Years)"
