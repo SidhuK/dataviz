@@ -1,16 +1,20 @@
 ![image](tidytuesday.jpeg)
 
-> Join the R4DS Online Learning Community in the weekly #TidyTuesday event! Every week we post a raw dataset, a chart or article related to that dataset, and ask you to explore the data. While the dataset will be “tamed”, it will not always be tidy! As such you might need to apply various R for Data Science techniques to wrangle the data into a true tidy format. The goal of TidyTuesday is to apply your R skills, get feedback, explore other’s work, and connect with the greater #RStats community! As such we encourage everyone of all skills to participate!
+> Join the R4DS Online Learning Community in the weekly #TidyTuesday event! Every week we post a raw dataset, a chart or article related to that dataset, and ask you to explore the data. While the dataset will be "tamed", it will not always be tidy! As such you might need to apply various R for Data Science techniques to wrangle the data into a true tidy format. The goal of TidyTuesday is to apply your R skills, get feedback, explore other's work, and connect with the greater #RStats community! As such we encourage everyone of all skills to participate!
 
 Check out the tidytuesday repo for details:
 
 [TidyTuesday](https://github.com/rfordatascience/tidytuesday)
 
-https://github.com/rfordatascience/tidytuesday
+<https://github.com/rfordatascience/tidytuesday>
 
 # TidyTuesday Plots
 
 My contributions to the weekly tidytuesday datasets.
+
+## January 10 2023 - 🐥 Bird Feeders in Winter 🐥
+
+![image](2023/02_Jan_10/birds.png)
 
 ## January 03 2023 - ✍️ Bring Your Own Data ✍️
 
@@ -86,21 +90,20 @@ My contributions to the weekly tidytuesday datasets.
 
 ## April 12 2022 - 🦕 Fossil Fuels - Indoor Death Rates 🦕
 
- <img src ="2022/05_April_12/change.png">
+<img src="2022/05_April_12/change.png"/>
 
 ## April 05 2022 - Digital News Organizations
 
-  <img src ="2022/04_April_05/export.png">
+<img src="2022/04_April_05/export.png"/>
 
 ## March 29 2022 - College Sports
 
- <img src ="2022/03_March_29/sec_sports.png">
- 
- 
- ## March 22 2022 - Baby Names
+<img src="2022/03_March_29/sec_sports.png"/>
 
- <img src ="2022/02_March_22/March%2022.gif">
+\## March 22 2022 - Baby Names
+
+<img src="2022/02_March_22/March%2022.gif"/>
 
 ## March 15 2022 - CRAN Packages
 
-<img src ="2022/01_March_15/March_15_2022.png">
+<img src="2022/01_March_15/March_15_2022.png"/>
