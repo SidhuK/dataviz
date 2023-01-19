@@ -12,6 +12,10 @@ Check out the tidytuesday repo for details:
 
 My contributions to the weekly tidytuesday datasets.
 
+## January 17 2023 - 🎨 Art History 🎨
+
+![image](2023/03_Jan_17/art.png)
+
 ## January 10 2023 - 🐥 Bird Feeders in Winter 🐥
 
 ![image](2023/02_Jan_10/birds.png)

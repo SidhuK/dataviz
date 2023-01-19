@@ -1,7 +1,7 @@
 # https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-01-10
 feederwatch <-
   readr::read_csv(
-    'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-01-10/PFW_2021_public.csv'
+    "https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-01-10/PFW_2021_public.csv"
   )
 
 svg_url <- "https://www.svgrepo.com/show/15359/bird-house.svg"
@@ -22,18 +22,22 @@ feederwatch <- feederwatch |>
 birds <-
   feederwatch |> select(c(subnational1_code, month_year, how_many, Year))
 
-birbs <- birds |> group_by(subnational1_code, month_year) |>
+birbs <- birds |>
+  group_by(subnational1_code, month_year) |>
   summarise(total_birds = sum(how_many))
 
 birbs_us <-
-  birbs |> mutate(country = str_extract(subnational1_code, "^\\w\\w")) |>
+  birbs |>
+  mutate(country = str_extract(subnational1_code, "^\\w\\w")) |>
   filter(country == "US") |>
   mutate(state_short = str_extract(subnational1_code, "\\w\\w$"))
 
 states_inbuilt <-
-  data.frame(name = state.name,
-             ab = state.abb,
-             index = seq.int(1:50))
+  data.frame(
+    name = state.name,
+    ab = state.abb,
+    index = seq.int(1:50)
+  )
 
 birbs_usa <-
   left_join(birbs_us, states_inbuilt, by = c("state_short" = "ab")) |>
@@ -43,11 +47,13 @@ birbs_usa |>
   ggplot() +
   geom_point_svg(aes(month_year, fct_reorder(name, -index), size = total_birds), svg = svg_txt) +
   scale_svg_default() +
-  scale_size_area(max_size = 10,
-                  breaks = c(100, 250, 500, 1000, 2500, 5000)) +
+  scale_size_area(
+    max_size = 10,
+    breaks = c(100, 250, 500, 1000, 2500, 5000)
+  ) +
   theme_minimal() +
   labs(
-    size = 'Birds Observed',
+    size = "Birds Observed",
     title = "Project FeederWatch: Birds of USA ",
     caption = "Data: Project FeederWatch | Graphic : Github.com/SidhuK",
     subtitle = "FeederWatch data (from Nov 2020 to Apr 2021) show which bird species visit feeders at thousands
@@ -112,7 +118,8 @@ birbs_usa |>
     legend.key.height = unit(1.25, "lines"),
     legend.key.width = unit(3.5, "lines"),
     plot.margin = margin(rep(20, 4))
-  ) + coord_cartesian(clip = "off")
+  ) +
+  coord_cartesian(clip = "off")
 
 ggsave(
   "birds.png",
